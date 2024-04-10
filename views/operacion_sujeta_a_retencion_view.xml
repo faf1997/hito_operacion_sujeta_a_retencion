@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Heredar la vista del formulario de res.company -->
+        <record id="res_company_operacion_sujeta_retencion_view_form" model="ir.ui.view">
+            <field name="name">res.company.operacion.sujeta.retencion.view.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <!-- Añadir el campo booleano después del campo 'name' -->
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="operacion_sujeta_retencion"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

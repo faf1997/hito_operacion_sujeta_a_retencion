@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Heredar la plantilla de la factura -->
+        <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='page']" position="inside">
+                <!-- Agregar tu campo personalizado después del número de factura -->
+                <div t-if="o.company_id.operacion_sujeta_retencion" class="mi-campo-texto">
+                    Operación sujeta a retención
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
